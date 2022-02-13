@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Str;
 
+$DATABASE_URL = 'mysql://b5b0ab702fb7f0:b8cb3fc9@us-cdbr-east-05.cleardb.net/heroku_c1d7460cc3bdd58?reconnect=true';
+$DATABASE = parse_url($DATABASE_URL);
+
 return [
 
     /*
@@ -45,12 +48,12 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'url' => $DATABASE_URL,
+            'host' => $DATABASE["host"],
+            'port' => 3306,
+            'database' => ltrim($DATABASE["path"], "/"),
+            'username' => $DATABASE["user"],
+            'password' => $DATABASE["pass"],
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
@@ -123,7 +126,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_'),
         ],
 
         'default' => [
