@@ -1,0 +1,6 @@
+div.row .info-tooltip {
+  padding-top: 3rem;
+}
+.errors li{
+  list-style-type: disclosure-closed !important;
+}

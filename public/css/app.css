@@ -45,8 +45,6 @@ select {
   margin-top: 20rem;
   position: fixed;
   font-size: 3rem;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
   transform: translateZ(0);
   -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s;
