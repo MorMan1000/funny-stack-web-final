@@ -36,11 +36,11 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => env('MAIL_HOST', 'smtp.gmail.com'),
-            'port' => env('MAIL_PORT', 465),
-            'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
-            'username' => env('MAIL_USERNAME', 'funny.stack1@gmail.com'),
-            'password' => env('MAIL_PASSWORD', '290508Mor'),
+            'host' =>  'smtp.gmail.com',
+            'port' => 465,
+            'encryption' => 'ssl',
+            'username' => 'funny.stack1@gmail.com',
+            'password' =>  '290508Mor',
             'timeout' => null,
             'auth_mode' => env('MAIL_AUTH_MODE'),
             'sendmail' => '/usr/sbin/sendmail -bs',
