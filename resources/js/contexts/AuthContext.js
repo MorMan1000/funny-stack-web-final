@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }) => {
     }
 
     catch (err) {
-      setErrors(error.response.data);
+      setErrors(err.response.data);
     }
     finally {
       setLoading(false);

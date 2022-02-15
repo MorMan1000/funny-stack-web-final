@@ -65,7 +65,6 @@ class SignUp
         'subject' => "Funny Stack Account Verification"
       ];
       $sendMail = new SendMail($details, "emails.VerificationMail");
-      $verifyEmail = new VerifyEmail();
       Mail::to($user["userEmail"])->send($sendMail);
       return true;
       return false;
