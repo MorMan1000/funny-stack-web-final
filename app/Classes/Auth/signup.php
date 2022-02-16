@@ -8,6 +8,7 @@ use App\Mail\VerifyEmail;
 use Exception;
 use App\Classes\Utils;
 use App\Classes\Auth\InvalidFieldsException;
+use Illuminate\Support\Facades\Log;
 use stdClass;
 
 class SignUp
@@ -69,7 +70,8 @@ class SignUp
       return true;
       return false;
     } catch (Exception $e) {
-      return false;
+      Log::error($e);
+      return response()->json($e->getMessage() . " ". $e->, 500, ["Content-type" => "application/json"]);
     } finally {
       $verifyEmail = null;
     }
