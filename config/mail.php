@@ -37,8 +37,8 @@ return [
         'smtp' => [
             'transport' => 'smtp',
             'host' =>  'smtp.gmail.com',
-            'port' => 465,
-            'encryption' => 'ssl',
+            'port' => 587,
+            'encryption' => 'tls',
             'username' => 'funny.stack1@gmail.com',
             'password' =>  '290508Mor',
             'timeout' => null,
