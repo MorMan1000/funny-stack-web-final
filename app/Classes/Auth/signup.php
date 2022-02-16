@@ -71,7 +71,7 @@ class SignUp
       return false;
     } catch (Exception $e) {
       Log::error($e);
-      return response()->json($e->getMessage() . " ". $e->, 500, ["Content-type" => "application/json"]);
+      return response()->json($e->getMessage(), 500, ["Content-type" => "application/json"]);
     } finally {
       $verifyEmail = null;
     }
