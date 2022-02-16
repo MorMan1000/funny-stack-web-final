@@ -26,7 +26,6 @@ class UserController extends Controller
     public function signUp(Request $request)
     {
         try {
-            return response()->json("blah bla", 200, ["Content-type" => "application/json"]);
             $userData = $request->all();
             if (isset($userData["user"])) {
                 $user = $userData["user"];
