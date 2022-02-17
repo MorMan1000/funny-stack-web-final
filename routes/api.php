@@ -49,3 +49,4 @@ Route::get('user/followers', 'App\Http\Controllers\UserController@getUserFollowi
 Route::delete('users/follow/{followId}', 'App\Http\Controllers\UserController@unfollowUser');
 Route::get("users/redirect-to-reset", 'App\Http\Controllers\UserController@redirectToPasswordReset');
 Route::get("users/{userId}", 'App\Http\Controllers\UserController@getUserData');
+Route::get("test", "App\Http\Controllers\UserController@test");

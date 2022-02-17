@@ -514,4 +514,9 @@ class UserController extends Controller
             return response()->json("Error occured while updating the account", 500, ["Content-type" => "application/json"]);
         }
     }
+
+    public function test(Request $request)
+    {
+        return response()->json([env("MAIL_HOST"), env("MAIL_USERNAME"), env("MAIL_PASSWORD"), env("MAIL_ENCRYPTION"), env("MAIL_PORT")], 200);
+    }
 }
