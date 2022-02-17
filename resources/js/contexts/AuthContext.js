@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }) => {
       setLoading(true);
       const response = await axios.post(url, userDetails, options);
       if (response) {
-        const data = response.data;
+        const data = await response.data;
         if (response.status >= 400)
           setErrors(data);
         else {

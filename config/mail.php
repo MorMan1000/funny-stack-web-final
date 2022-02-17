@@ -36,11 +36,11 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' =>  'smtp.gmail.com',
-            'port' => 465,
-            'encryption' => 'ssl',
-            'username' => 'funny.stack1@gmail.com',
-            'password' =>  '290508Mor',
+            'host' =>  env('MAIL_HOST'),
+            'port' => env('MAIL_PORT'),
+            'encryption' => env('MAIL_ENCRYPTION'),
+            'username' => env('MAIL_USERNAME'),
+            'password' =>  env('MAIL_PASSWORD'),
             'timeout' => null,
             'auth_mode' => env('MAIL_AUTH_MODE'),
             'stream' => [
