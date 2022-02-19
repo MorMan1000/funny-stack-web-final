@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
       console.log("sign up request");
       const url = "/api/auth/signup";
       const userDetails = {
-        user: { displayName: userInfo.displayName, userEmail: userInfo.userEmail, userPassword: userInfo.userPassword }, redirect: "https://funny-stack/api/auth/verify-account/"
+        user: { displayName: userInfo.displayName, userEmail: userInfo.userEmail, userPassword: userInfo.userPassword }, redirect: "https://funny-stack.herokuapp/api/auth/verify-account/"
       };
       const options = {
         headers: { 'Content-type': 'application/json' }
@@ -104,7 +104,7 @@ export const AuthProvider = ({ children }) => {
    */
   const resetPassword = async (email) => {
     setLoading(true);
-    const response = await axios.post("/api/auth/reset-password", { userEmail: email, redirect: "/reset-password", redirect: "https://funny-stack/reset-password" });
+    const response = await axios.post("/api/auth/reset-password", { userEmail: email, redirect: "/reset-password", redirect: "https://funny-stack.herokuapp/reset-password" });
     setLoading(false);
     history.push("/password-reset-mail")
   };
