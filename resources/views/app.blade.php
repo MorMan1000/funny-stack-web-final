@@ -20,8 +20,8 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
+        <?php header("Access-Control-Allow-Origin: *"); ?>
         <div id="app"></div>
-
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
     </html>

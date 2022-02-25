@@ -36,7 +36,7 @@ class MemeUpload
           $filename = $timeStap . $randon_str . ".png";
           $memeImgPath = $dir_path . "/" . $filename;
           file_put_contents($memeImgPath, $file);
-          $paths[$name] = "http://localhost:8000/" . $uploads_dir . "/" . $filename;
+          $paths[$name] = "https://funny-stack.herokuapp.com/" . $uploads_dir . "/" . $filename;
         }
       }
       return $paths;
