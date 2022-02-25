@@ -119,11 +119,11 @@ const MemeEditingForm = ({ memeData, setMemeField, saveMeme, drawMeme, defaultFo
       <div id="colorsSelect">
         <div>
           <label>Text Color</label>
-          <input type="color" value={memeData.textColor.value} id="colorText" onChange={textColorChange} />
+          <input type="color" value={memeData.textColor.value} id="colorText" onInput={textColorChange} />
         </div>
         <div>
           <label>Text Outline Color</label>
-          <input type="color" value={memeData.outlineColor.value} onChange={outlineColorChange} />
+          <input type="color" value={memeData.outlineColor.value} onInput={outlineColorChange} />
         </div>
       </div>
       <div>
