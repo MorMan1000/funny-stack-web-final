@@ -335,7 +335,7 @@ class UserController extends Controller
                     'userEmail' => $user->userEmail,
                     'userId' => $user->userId
                 ];
-                return redirect("http://localhost:8000/")->withCookie(cookie("user-details", json_encode($userDetails), httpOnly: false));
+                return redirect("https://funny-stack.herokuapp.com")->withCookie(cookie("user-details", json_encode($userDetails), httpOnly: false));
             }
             return response()->json("Account could noe be verified", 400, ["Content-type" => "application/json"]);
         } catch (Exception $e) {
