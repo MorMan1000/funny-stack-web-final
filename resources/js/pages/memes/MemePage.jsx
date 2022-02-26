@@ -63,19 +63,17 @@ const MemePage = () => {
   };
 
   const setUpEditingMeme = () => {
-    if (memeData.memeId === -1) {
-      const initMeme = getEmptyMeme();
-      const xPos = 0.3 * imageRef.current.width;
-      let memeTexts = [...initMeme.memeTexts.value];
-      for (let memeText of memeTexts) {
-        memeText.xPos = xPos
-      }
-      if (memeTexts.length >= 2) {
-        const bottomTextYpos = 0.75 * imageRef.current.height;
-        memeTexts[1].yPos = bottomTextYpos;
-      }
-      setMemeData({ ...initMeme, memeTexts: { value: memeTexts, updated: false } });
+    const initMeme = getEmptyMeme();
+    const xPos = 0.3 * imageRef.current.width;
+    let memeTexts = [...initMeme.memeTexts.value];
+    for (let memeText of memeTexts) {
+      memeText.xPos = xPos
     }
+    if (memeTexts.length >= 2) {
+      const bottomTextYpos = 0.75 * imageRef.current.height;
+      memeTexts[1].yPos = bottomTextYpos;
+    }
+    setMemeData({ ...initMeme, memeTexts: { value: memeTexts, updated: false } });
   }
 
   useEffect(() => {
