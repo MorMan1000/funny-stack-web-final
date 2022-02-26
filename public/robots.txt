@@ -1,2 +1,6 @@
 User-agent: *
-Disallow:
+Disallow: /thanks
+Disallow: /api/
+Disallow: /reset-password
+Disallow: /password-reset-mail
+Disallow: /user-upvotes
