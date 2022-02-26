@@ -6410,19 +6410,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var interactjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! interactjs */ "./node_modules/interactjs/dist/interact.min.js");
-/* harmony import */ var interactjs__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(interactjs__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _contexts_WebContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../contexts/WebContext */ "./resources/js/contexts/WebContext.js");
-/* harmony import */ var _contexts_AuthContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../contexts/AuthContext */ "./resources/js/contexts/AuthContext.js");
-/* harmony import */ var _components_memes_MemeImageModal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/memes/MemeImageModal */ "./resources/js/components/memes/MemeImageModal.jsx");
-/* harmony import */ var _components_memes_MemeView__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/memes/MemeView */ "./resources/js/components/memes/MemeView.jsx");
-/* harmony import */ var _components_memes_MemeEditingForm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/memes/MemeEditingForm */ "./resources/js/components/memes/MemeEditingForm.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _components_Loading__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/Loading */ "./resources/js/components/Loading.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../utils */ "./resources/js/utils.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var interactjs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! interactjs */ "./node_modules/interactjs/dist/interact.min.js");
+/* harmony import */ var interactjs__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(interactjs__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _contexts_WebContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../contexts/WebContext */ "./resources/js/contexts/WebContext.js");
+/* harmony import */ var _contexts_AuthContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../contexts/AuthContext */ "./resources/js/contexts/AuthContext.js");
+/* harmony import */ var _components_memes_MemeImageModal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/memes/MemeImageModal */ "./resources/js/components/memes/MemeImageModal.jsx");
+/* harmony import */ var _components_memes_MemeView__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/memes/MemeView */ "./resources/js/components/memes/MemeView.jsx");
+/* harmony import */ var _components_memes_MemeEditingForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/memes/MemeEditingForm */ "./resources/js/components/memes/MemeEditingForm.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _components_Loading__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/Loading */ "./resources/js/components/Loading.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utils */ "./resources/js/utils.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -6472,7 +6480,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var MemePage = function MemePage() {
   var _upvotesList$find;
 
-  var _useWebContext = (0,_contexts_WebContext__WEBPACK_IMPORTED_MODULE_1__.useWebContext)(),
+  var _useWebContext = (0,_contexts_WebContext__WEBPACK_IMPORTED_MODULE_2__.useWebContext)(),
       memeData = _useWebContext.memeData,
       setMemeField = _useWebContext.setMemeField,
       setMemeFields = _useWebContext.setMemeFields,
@@ -6493,30 +6501,30 @@ var MemePage = function MemePage() {
       deleteUpvote = _useWebContext.deleteUpvote,
       setMemeData = _useWebContext.setMemeData;
 
-  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_9__.useLocation)();
-  var defaultFontSize = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(0);
-  var imageRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var canvasRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var memeTextsDiv = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var saveBtn = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_10__.useLocation)();
+  var defaultFontSize = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(0);
+  var imageRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
+  var canvasRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
+  var memeTextsDiv = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
+  var saveBtn = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
 
-  var _useAuth = (0,_contexts_AuthContext__WEBPACK_IMPORTED_MODULE_2__.useAuth)(),
+  var _useAuth = (0,_contexts_AuthContext__WEBPACK_IMPORTED_MODULE_3__.useAuth)(),
       currentUser = _useAuth.currentUser;
 
-  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_9__.useParams)(),
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_10__.useParams)(),
       memeId = _useParams.memeId;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       memeDataChanged = _useState2[0],
       setMemeDataChanged = _useState2[1];
 
-  var initialMemeData = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
-  var changedFields = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)([]); //This objects allows the meme text dragging
+  var initialMemeData = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(false);
+  var changedFields = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)([]); //This objects allows the meme text dragging
 
-  interactjs__WEBPACK_IMPORTED_MODULE_10___default()('.draggable').draggable({
+  interactjs__WEBPACK_IMPORTED_MODULE_11___default()('.draggable').draggable({
     // keep the element within the area of it's parent
-    modifiers: [interactjs__WEBPACK_IMPORTED_MODULE_10___default().modifiers.restrictRect({
+    modifiers: [interactjs__WEBPACK_IMPORTED_MODULE_11___default().modifiers.restrictRect({
       restriction: 'parent'
     })],
     listeners: {
@@ -6555,7 +6563,7 @@ var MemePage = function MemePage() {
   };
 
   var setUpEditingMeme = function setUpEditingMeme() {
-    var initMeme = (0,_contexts_WebContext__WEBPACK_IMPORTED_MODULE_1__.getEmptyMeme)();
+    var initMeme = (0,_contexts_WebContext__WEBPACK_IMPORTED_MODULE_2__.getEmptyMeme)();
     var xPos = 0.3 * imageRef.current.width;
 
     var memeTexts = _toConsumableArray(initMeme.memeTexts.value);
@@ -6587,26 +6595,26 @@ var MemePage = function MemePage() {
     }));
   };
 
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     defaultFontSize.current = parseFloat(window.getComputedStyle(memeTextsDiv.current.querySelector(".memeText")).fontSize.slice(0, -2));
     canvasRef.current = document.createElement("canvas");
     setUpEditingMeme();
     canvasRef.current.isUpdated = false;
     initialMemeData.current = _objectSpread({}, memeData);
   }, []);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     setUpEditingMeme();
   }, [location]);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     if (memeId && !isNaN(memeId) && memeData.memeId !== memeId) {
       getMeme(parseInt(memeId));
       setIsEditing(false);
     }
   }, [memesList]);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     if (saveBtn && saveBtn.current) saveBtn.current.disabled = false;
   }, [errors]);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     if (isEditing) {
       if (memeDataChanged) window.removeEventListener('beforeunload', beforeunload);
     }
@@ -6627,27 +6635,77 @@ var MemePage = function MemePage() {
   }; //Download the meme to the user machine
 
 
-  var downloadMeme = function downloadMeme() {
-    try {
-      if (memeData.memeOriginImage) {
-        if (!canvasRef.current.isUpdated && isEditing) {
-          drawMeme();
-        }
+  var downloadMeme = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      var urlLink, link, memeName, response, blob;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.prev = 0;
 
-        var urlLink = isEditing ? canvasRef.current.urlLink : memeData.memeImage.value;
-        var link = document.createElement('a');
-        var memeName = memeData.memeTitle.value;
-        link.download = memeName ? memeName + ".png" : 'FunnyStack-Meme.png';
-        link.href = urlLink;
-        link.click();
-      } else {
-        setErrors(errors + "\n" + "Image was not uploaded");
-      }
-    } catch (err) {
-      console.log(err);
-      setErrors(errors + "\n" + err);
-    }
-  }; //Draw the meme on the canvas.
+              if (!memeData.memeOriginImage) {
+                _context.next = 19;
+                break;
+              }
+
+              if (!canvasRef.current.isUpdated && isEditing) {
+                drawMeme();
+              }
+
+              urlLink = isEditing ? canvasRef.current.urlLink : memeData.memeImage.value;
+              link = document.createElement('a');
+              memeName = memeData.memeTitle.value;
+
+              if (!urlLink.includes("funny-stack.s3")) {
+                _context.next = 14;
+                break;
+              }
+
+              _context.next = 9;
+              return fetch(urlLink);
+
+            case 9:
+              response = _context.sent;
+              _context.next = 12;
+              return response.blob();
+
+            case 12:
+              blob = _context.sent;
+              urlLink = URL.createObjectURL(blob);
+
+            case 14:
+              link.download = memeName ? memeName + ".png" : 'FunnyStack-Meme.png';
+              link.href = urlLink;
+              link.click();
+              _context.next = 20;
+              break;
+
+            case 19:
+              setErrors(errors + "\n" + "Image was not uploaded");
+
+            case 20:
+              _context.next = 26;
+              break;
+
+            case 22:
+              _context.prev = 22;
+              _context.t0 = _context["catch"](0);
+              console.log(_context.t0);
+              setErrors(errors + "\n" + _context.t0);
+
+            case 26:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[0, 22]]);
+    }));
+
+    return function downloadMeme() {
+      return _ref.apply(this, arguments);
+    };
+  }(); //Draw the meme on the canvas.
 
 
   var drawMeme = function drawMeme() {
@@ -6696,7 +6754,7 @@ var MemePage = function MemePage() {
 
   var checkMemeChange = function checkMemeChange(fieldName, value) {
     if (value instanceof Array) {
-      if ((0,_utils__WEBPACK_IMPORTED_MODULE_7__.compareArrays)(value, initialMemeData.current[fieldName].value)) {
+      if ((0,_utils__WEBPACK_IMPORTED_MODULE_8__.compareArrays)(value, initialMemeData.current[fieldName].value)) {
         changedFields.current.pop(fieldName);
         setMemeDataChanged(changedFields.current.length > 0);
       } else {
@@ -6728,74 +6786,74 @@ var MemePage = function MemePage() {
     return memeTextStyle;
   };
 
-  return memeData.hasOwnProperty("memeId") && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+  return memeData.hasOwnProperty("memeId") && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
     id: "createMemecontainer",
     className: "container",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Prompt, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Prompt, {
         when: isEditing && memeDataChanged,
         message: function message(location) {
           return !location.pathname.includes("/meme/") && "Are you sure you want to go to ".concat(location.pathname, "? Your data on this page won't be saved");
         }
-      }), loading && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Loading__WEBPACK_IMPORTED_MODULE_6__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+      }), loading && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Loading__WEBPACK_IMPORTED_MODULE_7__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
         className: "row",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
           className: "col m12 l8",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
             ref: memeTextsDiv,
             id: "meme-preview",
             style: {
               color: memeData.textColor.value,
               WebkitTextStroke: "".concat(memeData.outlineColor.value, " 2.5px")
             },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
               src: memeData.memeOriginImage.value,
               crossOrigin: "anonymous",
               ref: imageRef,
               onLoad: imageOnLoad
             }), memeData.memeTexts && memeData.memeTexts.value.map(function (memeText, index) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                 id: index + 1,
                 style: getMemeTextStyle(memeText.xPos, memeText.yPos),
                 className: "memeText ".concat(isEditing && " draggable"),
                 children: memeText.text && memeText.text.split("\n").map(function (textLine, index) {
-                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-                    children: [textLine, " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {})]
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+                    children: [textLine, " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {})]
                   }, index);
                 })
               }, index);
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
             id: "memeSideButtons",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
               type: "button",
               className: "btn",
               title: "Download meme",
               onClick: downloadMeme,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
                 className: "material-icons",
                 children: "file_download"
               })
-            }), (currentUser === null || currentUser === void 0 ? void 0 : currentUser.userId) && (memeData === null || memeData === void 0 ? void 0 : memeData.memeId) != -1 && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.userId) === (memeData === null || memeData === void 0 ? void 0 : memeData.userId) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+            }), (currentUser === null || currentUser === void 0 ? void 0 : currentUser.userId) && (memeData === null || memeData === void 0 ? void 0 : memeData.memeId) != -1 && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.userId) === (memeData === null || memeData === void 0 ? void 0 : memeData.userId) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
               type: "submit",
               className: "btn",
               title: "Delete meme",
               ref: saveBtn,
               onClick: onDeleteMeme,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
                 className: "material-icons",
                 children: "delete"
               })
             })]
-          }), (memeData === null || memeData === void 0 ? void 0 : memeData.memeId) != -1 && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.userId) != (memeData === null || memeData === void 0 ? void 0 : memeData.userId) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("p", {
-            children: ["Created by ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Link, {
+          }), (memeData === null || memeData === void 0 ? void 0 : memeData.memeId) != -1 && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.userId) != (memeData === null || memeData === void 0 ? void 0 : memeData.userId) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("p", {
+            children: ["Created by ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Link, {
               to: "/user/" + memeData.userId,
               children: memeData.userDisplayName
             })]
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
           className: "col m12 l4",
-          children: memeData.memeId.value !== -1 && !isEditing ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_memes_MemeView__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          children: memeData.memeId.value !== -1 && !isEditing ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_memes_MemeView__WEBPACK_IMPORTED_MODULE_5__["default"], {
             setIsEditing: setIsEditing,
             memeTitle: memeData.memeTitle.value,
             created_at: memeData.created_at,
@@ -6808,7 +6866,7 @@ var MemePage = function MemePage() {
             deleteUpvote: deleteUpvote,
             memeUpvotes: memeData.upvotes,
             isLoggedIn: currentUser.hasOwnProperty("userId")
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_memes_MemeEditingForm__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_memes_MemeEditingForm__WEBPACK_IMPORTED_MODULE_6__["default"], {
             memeData: memeData,
             setMemeField: setMemeField,
             saveMeme: saveMeme,
@@ -6821,7 +6879,7 @@ var MemePage = function MemePage() {
             isMemeOwner: isMemeOwner,
             makeMemeCopy: makeMemeCopy
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_memes_MemeImageModal__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_memes_MemeImageModal__WEBPACK_IMPORTED_MODULE_4__["default"], {
           setMemeField: setMemeField,
           onLoad: imageOnLoad
         })]

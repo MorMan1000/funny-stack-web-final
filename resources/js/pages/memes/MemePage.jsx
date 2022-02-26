@@ -121,15 +121,21 @@ const MemePage = () => {
   }
 
   //Download the meme to the user machine
-  const downloadMeme = () => {
+  const downloadMeme = async () => {
     try {
       if (memeData.memeOriginImage) {
         if (!canvasRef.current.isUpdated && isEditing) {
           drawMeme();
         }
-        const urlLink = isEditing ? canvasRef.current.urlLink : memeData.memeImage.value;
+        let urlLink = isEditing ? canvasRef.
+          current.urlLink : memeData.memeImage.value;
         const link = document.createElement('a');
         const memeName = memeData.memeTitle.value;
+        if (urlLink.includes("funny-stack.s3")) {
+          const response = await fetch(urlLink);
+          const blob = await response.blob();
+          urlLink = URL.createObjectURL(blob)
+        }
         link.download = memeName ? memeName + ".png" : 'FunnyStack-Meme.png';
         link.href = urlLink;
         link.click();
