@@ -7322,7 +7322,7 @@ var UserPage = function UserPage() {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "row",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: "col m12 l5",
+        className: "col s12 l6",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h3", {
           children: [" ", userData.displayName, " "]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
@@ -7343,7 +7343,7 @@ var UserPage = function UserPage() {
           })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "col m12 l7",
+        className: "col s12 l6",
         children: topMemes.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_memes_MemesSlider__WEBPACK_IMPORTED_MODULE_3__["default"], {
           setIsEditing: setIsEditing,
           memes: topMemes

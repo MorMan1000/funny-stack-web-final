@@ -50,7 +50,7 @@ const UserPage = () => {
   return (
     <div className="container">
       <div className='row'>
-        <div className='col m12 l5'>
+        <div className='col s12 l6'>
           <h3> {userData.displayName} </h3>
           <p>Total Followers: {userData.followers}</p>
           <p>Total Memes: {userData.memes}</p>
@@ -61,7 +61,7 @@ const UserPage = () => {
             </div>
           }
         </div>
-        <div className='col m12 l7'>
+        <div className='col s12 l6'>
           {topMemes.length > 0 && <MemesSilider setIsEditing={setIsEditing} memes={topMemes} />}
         </div>
       </div>
