@@ -27,13 +27,10 @@ const UserPage = () => {
     }
   };
   useEffect(() => {
-    if (userData.userId === -1) {
-      getUserData(userId);
-      getUserTopMemes(userId).then((topMemes) => {
-        setTopMemes(topMemes);
-      });
-
-    }
+    getUserData(userId);
+    getUserTopMemes(userId).then((topMemes) => {
+      setTopMemes(topMemes);
+    });
   }, [])
 
   useEffect(() => {

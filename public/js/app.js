@@ -7296,12 +7296,10 @@ var UserPage = function UserPage() {
   };
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (userData.userId === -1) {
-      getUserData(userId);
-      getUserTopMemes(userId).then(function (topMemes) {
-        setTopMemes(topMemes);
-      });
-    }
+    getUserData(userId);
+    getUserTopMemes(userId).then(function (topMemes) {
+      setTopMemes(topMemes);
+    });
   }, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (followBtn.current && currentUser.hasOwnProperty("userId")) {
