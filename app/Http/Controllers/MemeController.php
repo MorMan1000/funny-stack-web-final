@@ -9,7 +9,7 @@ use App\Classes\Memes\MemeUpload;
 use App\Classes\Utils;
 use App\Models\Upvote;
 use Exception;
-
+use Illuminate\Support\Facades\Storage;
 
 class MemeController extends Controller
 {
@@ -24,6 +24,7 @@ class MemeController extends Controller
     public function create(Request $request)
     {
         try {
+
             $memeData = $request->all();
             if (isset($memeData["memeTitle"])) {
                 if (isset($memeData["memeOriginImage"])) {
@@ -140,9 +141,9 @@ class MemeController extends Controller
                     }
                     if (isset($paths["memeImage"])) {
                         $memeData["memeImage"] = $paths["memeImage"];
-                        $splitFile = explode("/", $memeRecord["memeImage"]);
-                        $filename = end($splitFile);
-                        unlink($_SERVER['DOCUMENT_ROOT'] . "/memes/" . $filename);
+                        // $splitFile = explode("/", $memeRecord["memeImage"]);
+                        // $filename = end($splitFile);
+                        // unlink($_SERVER['DOCUMENT_ROOT'] . "/memes/" . $filename);
                     }
                     if ($meme->update($memeData)) {
                         $meme = $meme->get()[0];

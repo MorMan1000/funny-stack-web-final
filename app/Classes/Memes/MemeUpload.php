@@ -4,7 +4,7 @@ namespace App\Classes\Memes;
 
 
 use Exception;
-
+use Illuminate\Support\Facades\Storage;
 
 class MemeUpload
 {
@@ -18,7 +18,7 @@ class MemeUpload
   {
     try {
       $uploads_dir = 'memes';
-      $dir_path = $_SERVER['DOCUMENT_ROOT'] . '/' . $uploads_dir;
+      // $dir_path = $_SERVER['DOCUMENT_ROOT'] . '/' . $uploads_dir;
       $paths = [];
       foreach ($files as $name => $file) {
         if (str_contains($file, "localhost")) {
@@ -34,9 +34,13 @@ class MemeUpload
           $randon_str =
             substr(str_shuffle('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'), 1, 10);
           $filename = $timeStap . $randon_str . ".png";
-          $memeImgPath = $dir_path . "/" . $filename;
-          file_put_contents($memeImgPath, $file);
-          $paths[$name] = "https://funny-stack.herokuapp.com/" . $uploads_dir . "/" . $filename;
+          $memeImgPath = $uploads_dir . "/" . $filename;
+          if (Storage::disk("s3")->put($memeImgPath, $file))
+            $paths[$name] = Storage::disk('s3')->url($memeImgPath);
+          else
+            return null;
+          //file_put_contents($memeImgPath, $file);
+          // $paths[$name] = "https://funny-stack.herokuapp.com/" . $uploads_dir . "/" . $filename;
         }
       }
       return $paths;

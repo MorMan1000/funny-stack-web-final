@@ -15,6 +15,7 @@
         "laravel/sanctum": "^2.14",
         "laravel/tinker": "^2.7",
         "laravel/ui": "^3.4",
+        "league/flysystem-aws-s3-v3": "^3.0",
         "s-ichikawa/laravel-sendgrid-driver": "^3.0"
     },
     "require-dev": {
