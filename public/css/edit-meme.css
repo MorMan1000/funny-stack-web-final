@@ -58,6 +58,7 @@
   text-shadow: 0.12rem 0.12rem black;
   position: absolute;
   line-height: 80%;
+  touch-action: none;
 }
 
 #memeUploadForm {
