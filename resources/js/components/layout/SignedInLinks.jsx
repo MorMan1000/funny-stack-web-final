@@ -53,7 +53,7 @@ const SignedInLinks = ({ displayName, userId }) => {
         displayName
       }
 
-        </h3> <li><a href="">Home</a></li> <li><NavLink to="/meme">New Meme</NavLink></li> <li><NavLink to="/memes-list">My memes</NavLink></li> <li><SignOut /></li> </ul> </div>)
+        </h3> <li><a href="">Home</a></li> <li><NavLink to="/meme">New Meme</NavLink></li> <li><NavLink to={"/user-memes/" + userId}>My memes</NavLink></li> <li><SignOut /></li> </ul> </div>)
 }
 
 export default SignedInLinks;
