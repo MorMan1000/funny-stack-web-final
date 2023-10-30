@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Str;
 
-$DATABASE_URL = ''; // 'mysql://b5b0ab702fb7f0:b8cb3fc9@us-cdbr-east-05.cleardb.net/heroku_c1d7460cc3bdd58?reconnect=true';
+$DATABASE_URL = parse_url('postgres://fdanljjrlpwfmf:bd34270dfe048918b24da9615fef67615f5e2715d80e17479e1559c0a5de3cc1@ec2-44-215-40-87.compute-1.amazonaws.com:5432/daqdn17htevqp2'); // 'mysql://b5b0ab702fb7f0:b8cb3fc9@us-cdbr-east-05.cleardb.net/heroku_c1d7460cc3bdd58?reconnect=true';
 
 return [
 
@@ -17,7 +17,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -68,11 +68,11 @@ return [
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => $DATABASE_URL['host'],
+            'port' => $DATABASE_URL['port'],
+            'database' => ltrim($DATABASE_URL['path'], "/"),
+            'username' => $DATABASE_URL['user'],
+            'password' => $DATABASE_URL['pass'],
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
