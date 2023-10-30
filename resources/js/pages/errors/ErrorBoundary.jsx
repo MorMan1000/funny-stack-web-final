@@ -18,6 +18,7 @@ class ErrorBoundary extends React.Component {
 
   render() {
     if (this.state.errorInfo) {
+      alert(this.state.errorInfo);
       // Error path
       return (
         <div>
