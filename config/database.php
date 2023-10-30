@@ -47,7 +47,7 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'url' => $DATABASE_URL,
+            'url' => "",
             'host' => env('DB_HOST'),
             'port' => 3306,
             'database' => env('DB_DATABASE'),
@@ -67,7 +67,7 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
+            'url' => '',
             'host' => $DATABASE_URL['host'],
             'port' => $DATABASE_URL['port'],
             'database' => ltrim($DATABASE_URL['path'], "/"),
