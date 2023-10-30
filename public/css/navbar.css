@@ -1,14 +1,1 @@
-#mobile-links {
-  width: 100%;
-  font-size: 2.5rem;
-  text-align: center;
-}
-
-#mobile-links li {
-  margin-top: 3%;
-}
-
-.sidenav-overlay {
-  opacity: 0 !important;
-  z-index: -1 !important;
-}
+#mobile-links{font-size:2.5rem;text-align:center;width:100%}#mobile-links li{margin-top:3%}.sidenav-overlay{opacity:0!important;z-index:-1!important}
