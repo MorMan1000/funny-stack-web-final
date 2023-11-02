@@ -40,9 +40,8 @@ class UserController extends Controller
                     $verificationHash = hash('sha256', rand(1, 100000));
                     $userRecord = User::create(['userEmail' => $user["userEmail"], 'displayName' => $user["displayName"], 'userPassword' => $password["userPassword"], 'passwordSalt' =>  $password["passwordSalt"], 'verificationHash' => $verificationHash]);
                     if ($userRecord) {
-                        if (SignUp::sendMail($userRecord, $userData["redirect"], $verificationHash))
-                            return response()->json($userRecord->id, 200, ["Content-type" => "application/json"]);
-                        $error .= "Email could not be sent please use another one ";
+                        SignUp::sendMail($userRecord, $userData["redirect"], $verificationHash);
+                        return response()->json($userRecord->id, 200, ["Content-type" => "application/json"]);
                     }
                 }
 
