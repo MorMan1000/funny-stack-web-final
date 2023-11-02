@@ -40,7 +40,7 @@ class UserController extends Controller
                     $verificationHash = hash('sha256', rand(1, 100000));
                     $userRecord = User::create(['userEmail' => $user["userEmail"], 'displayName' => $user["displayName"], 'userPassword' => $password["userPassword"], 'passwordSalt' =>  $password["passwordSalt"], 'verificationHash' => $verificationHash]);
                     if ($userRecord) {
-                        SignUp::sendMail($userRecord, $userData["redirect"], $verificationHash);
+                        SignUp::sendMail($userRecord, "http://localhost:8000/api/auth/verify-account/", $verificationHash);
                         return response()->json($userRecord->id, 200, ["Content-type" => "application/json"]);
                     }
                 }
@@ -321,9 +321,9 @@ class UserController extends Controller
     public function verifyAccount($userId, $verificationHash)
     {
         try {
-            $getUser = User::whereraw('userId=? and verificationHash=?', array($userId, $verificationHash))->get();
-            if ($getUser) {
-                $user = $getUser[0];
+
+            $user = User::where('userId', '=', $userId)->where('verificationHash', '=', $verificationHash)->first();
+            if ($user) {
                 if ($user->isVerified) {
                     return response()->json("Account is already verified", 400, ["Content-type" => "application/json"]);
                 }
@@ -334,7 +334,7 @@ class UserController extends Controller
                     'userEmail' => $user->userEmail,
                     'userId' => $user->userId
                 ];
-                return redirect("https://funny-stack.herokuapp.com")->withCookie(cookie("user-details", json_encode($userDetails), httpOnly: false));
+                return redirect("http://localhost:8000/")->withCookie(cookie("user-details", json_encode($userDetails), httpOnly: false));
             }
             return response()->json("Account could noe be verified", 400, ["Content-type" => "application/json"]);
         } catch (Exception $e) {
