@@ -404,7 +404,7 @@ class UserController extends Controller
             if (isset($user) && $user->update(["verificationHash" => $verificationHash]))
                 $user = $user->first();
             if ($user) {
-                $resetLink = "$data[redirect]?userId=" . $user->userId . '&hash=' . $verificationHash;
+                $resetLink = "http://localhost:8000/reset-password?userId=" . $user->userId . '&hash=' . $verificationHash;
                 $details = [
                     'resetLink' => $resetLink,
                     'subject' => "Funny Stack Password Reset"
