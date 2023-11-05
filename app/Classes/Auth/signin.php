@@ -13,24 +13,26 @@ class SignIn
    * Verify the credintials provided by the user.
    *
    * @param  array $user - associative array with email and password/token for google auth.
-   * @return void - if cradentials verified, otherise error returned in response.
+   * @return - upadated user data
    */
   public static function checkUserCredentials($user)
   {
     $error = "";
-    if (!isset($user["email"])) {
+    if (!isset($user["email"]) && !$user["googleLogin"]) {
       $error .= "Email is missing\n";
     }
     if (!isset($user["password"]) && !$user["googleLogin"]) {
       $error .= "Password is missing";
-    } else if ($user["email"] && $user["googleLogin"]) {
-      if (!self::isTokenValid($user["email"], $user["tokenId"]))
+    } else if ($user["googleLogin"]) {
+      $user["email"] = self::isTokenValid($user["access_token"]);
+      if (!isset($user["email"]))
         $error = "Email could not be verified";
     }
     if ($error)
       return response()->json($error, 400, ["Content-type" => "application/json"]);
     foreach ($user as $key => $field)
       $user[$key] = Utils::testInput($field);
+    return $user;
   }
 
 
@@ -38,13 +40,13 @@ class SignIn
    * isTokenValid - verify a google auth token id.
    *
    * @param  string $email - the google account of the user.
-   * @param  string $tokenId - the token id associated with the account
+   * @param  string $accessToken - the access token associated with the account
    * @return true if verifid, @return false otherwise.
    */
-  private static function isTokenValid(string $email, string $tokenId)
+  private static function isTokenValid(string $accessToken)
   {
     try {
-      $url = "https://oauth2.googleapis.com/tokeninfo?id_token=" . $tokenId;
+      $url = "https://oauth2.googleapis.com/tokeninfo?access_token=" . $accessToken;
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL, $url);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
@@ -54,7 +56,7 @@ class SignIn
       } else {
         $decoded = json_decode($resp);
         if (isset($decoded->email) && ($decoded->email_verified))
-          return $email == $decoded->email && $decoded->email_verified;
+          return $decoded->email;
       }
     } catch (Exception $err) {
       http_response_code(500);

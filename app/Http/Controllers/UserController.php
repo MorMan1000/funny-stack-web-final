@@ -354,8 +354,8 @@ class UserController extends Controller
         try {
             $userData = $request->all();
             if ($userData) {
-                $userData["googleLogin"] = isset($userData["tokenId"]);
-                SignIn::checkUserCredentials($userData);
+                $userData["googleLogin"] = isset($userData["access_token"]);
+                $userData = SignIn::checkUserCredentials($userData);
                 $cols = ["userId", "displayName", "userEmail", "isVerified"];
                 if (!$userData["googleLogin"]) {
                     array_push($cols, "userPassword", "passwordSalt");

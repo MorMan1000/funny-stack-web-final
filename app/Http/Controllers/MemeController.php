@@ -174,7 +174,10 @@ class MemeController extends Controller
     function deleteMeme($memeId)
     {
         try {
-            $meme = Meme::where("memeId", $memeId)->delete();
+            $meme = Meme::where("memeId", $memeId);
+            $memeImage = $meme->get()[0]->memeImage;
+            Storage::disk("s3")->delete($memeImage);
+            $meme->delete();
             if ($meme) {
                 return response()->json(
                     json_encode($meme),

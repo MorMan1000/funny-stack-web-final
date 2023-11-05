@@ -20,65 +20,67 @@ import ForgotPassword from '../pages/auth/ForgotPassword';
 import ResetMailSent from '../pages/auth/ResetMailSent';
 import UserDetails from '../pages/auth/UserDetails';
 import ErrorBoundary from '../pages/errors/ErrorBoundary';
-
+import { GoogleOAuthProvider } from "@react-oauth/google"
 
 function App() {
   return (
     <div className="App">
-      <Router history={history}>
-        <Contexts >
-          <ErrorBoundary>
-            <Navbar />
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route exact path="/user/:userId">
-                <UserPage />
-              </Route>
-              <Route path="/login">
-                <Login />
-              </Route>
-              <Route path="/signup">
-                <Signup />
-              </Route>
-              <Route path="/thanks">
-                <Thanks />
-              </Route>
-              <Route path="/meme/:memeId?">
-                <MemePage />
-              </Route>
-              <Route path="/user-memes/:userId">
-                <UserMemes />
-              </Route>
-              <Route path="/user-upvotes">
-                <UserUpvotes />
-              </Route>
-              <Route path="/user-followings">
-                <UserFollowings />
-              </Route>
-              <Route path="/search">
-                <FindMemes />
-              </Route>
-              <Route path="/forgot-password">
-                <ForgotPassword />
-              </Route>
-              <Route path="/reset-password">
-                <ResetPassword />
-              </Route>
-              <Route path="/password-reset-mail">
-                <ResetMailSent />
-              </Route>
-              <Route path="/user-details">
-                <UserDetails />
-              </Route>
-              <Route path="*">
-                <NotFoundError />
-              </Route>
-            </Switch>
-          </ErrorBoundary>
-        </Contexts>
-      </Router>
+      <GoogleOAuthProvider clientId="375008495948-17cq1j36rpabbli11q6ecphjn4mv4mcf.apps.googleusercontent.com" >
+        <Router history={history}>
+          <Contexts >
+            <ErrorBoundary>
+              <Navbar />
+              <Switch>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                <Route exact path="/user/:userId">
+                  <UserPage />
+                </Route>
+                <Route path="/login">
+                  <Login />
+                </Route>
+                <Route path="/signup">
+                  <Signup />
+                </Route>
+                <Route path="/thanks">
+                  <Thanks />
+                </Route>
+                <Route path="/meme/:memeId?">
+                  <MemePage />
+                </Route>
+                <Route path="/user-memes/:userId">
+                  <UserMemes />
+                </Route>
+                <Route path="/user-upvotes">
+                  <UserUpvotes />
+                </Route>
+                <Route path="/user-followings">
+                  <UserFollowings />
+                </Route>
+                <Route path="/search">
+                  <FindMemes />
+                </Route>
+                <Route path="/forgot-password">
+                  <ForgotPassword />
+                </Route>
+                <Route path="/reset-password">
+                  <ResetPassword />
+                </Route>
+                <Route path="/password-reset-mail">
+                  <ResetMailSent />
+                </Route>
+                <Route path="/user-details">
+                  <UserDetails />
+                </Route>
+                <Route path="*">
+                  <NotFoundError />
+                </Route>
+              </Switch>
+            </ErrorBoundary>
+          </Contexts>
+        </Router>
+      </GoogleOAuthProvider>
     </div >
   );
 }

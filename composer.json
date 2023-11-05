@@ -18,7 +18,8 @@
         "league/flysystem-aws-s3-v3": "^3.0",
         "s-ichikawa/laravel-sendgrid-driver": "^3.0",
         "symfony/http-client": "^6.0",
-        "symfony/mailgun-mailer": "^6.0"
+        "symfony/mailgun-mailer": "^6.0",
+        "ylsideas/cockroachdb-laravel": "^1.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
