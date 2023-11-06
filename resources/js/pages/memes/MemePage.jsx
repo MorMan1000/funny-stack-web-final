@@ -14,7 +14,7 @@ import { compareArrays, compareObjects } from '../../utils'
  This is A page used to show meme and it's details and to edit them
  */
 const MemePage = () => {
-  const { memeData, setMemeField, setMemeFields, saveMeme, errors, setErrors, isEditing, setIsEditing, deleteMeme, memesList, getMeme, loading, makeMemeCopy, isMemeOwner, setIsMemeOwner, upvoteMeme, upvotesList, deleteUpvote, setMemeData } = useWebContext();
+  const { memeData, setMemeField, setMemeFields, saveMeme, errors, setErrors, isEditing, setIsEditing, deleteMeme, memesList, getMeme, memeLoading, makeMemeCopy, isMemeOwner, upvoteMeme, upvotesList, deleteUpvote, setMemeData } = useWebContext();
   const location = useLocation();
   const defaultFontSize = useRef(0);
   const imageRef = useRef(null);
@@ -236,7 +236,7 @@ const MemePage = () => {
           message={location => !location.pathname.includes("/meme/") &&
             `Are you sure you want to go to ${location.pathname}? Your data on this page won't be saved`
           } />
-        {loading && <Loading />}
+        {memeLoading && <Loading />}
         <div className="row">
           <div className="col m12 l8">
             <div ref={memeTextsDiv} id="meme-preview" style={{ color: memeData.textColor.value, WebkitTextStroke: `${memeData.outlineColor.value} 2.5px` }}>

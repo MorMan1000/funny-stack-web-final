@@ -3793,11 +3793,11 @@ var MemesList = function MemesList() {
       memesList = _useWebContext.memesList,
       setMemeData = _useWebContext.setMemeData,
       setIsEditing = _useWebContext.setIsEditing,
-      loading = _useWebContext.loading;
+      listLoading = _useWebContext.listLoading;
 
   var memesListView = memesList.length > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section", {
     className: "section",
-    children: [loading && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Loading__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    children: [listLoading && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Loading__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "memes-center",
       children: memesList.map(function (meme, index) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_MemeItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -4384,68 +4384,73 @@ var WebProvider = function WebProvider(_ref) {
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
-      loading = _useState2[0],
-      setLoading = _useState2[1];
+      memeLoading = _useState2[0],
+      setMemeLoading = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState4 = _slicedToArray(_useState3, 2),
-      upvotesList = _useState4[0],
-      setUpvotesList = _useState4[1];
+      listLoading = _useState4[0],
+      setListLoading = _useState4[1];
 
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
       _useState6 = _slicedToArray(_useState5, 2),
-      apiImages = _useState6[0],
-      setApiImages = _useState6[1];
+      upvotesList = _useState6[0],
+      setUpvotesList = _useState6[1];
 
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
       _useState8 = _slicedToArray(_useState7, 2),
-      errors = _useState8[0],
-      setErrors = _useState8[1];
+      apiImages = _useState8[0],
+      setApiImages = _useState8[1];
 
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState10 = _slicedToArray(_useState9, 2),
-      isEditing = _useState10[0],
-      setIsEditing = _useState10[1];
+      errors = _useState10[0],
+      setErrors = _useState10[1];
 
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(getEmptyMeme()),
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
       _useState12 = _slicedToArray(_useState11, 2),
-      memeData = _useState12[0],
-      setMemeData = _useState12[1];
+      isEditing = _useState12[0],
+      setIsEditing = _useState12[1];
 
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(getEmptyMeme()),
       _useState14 = _slicedToArray(_useState13, 2),
-      memesList = _useState14[0],
-      setMemesList = _useState14[1];
+      memeData = _useState14[0],
+      setMemeData = _useState14[1];
+
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+      _useState16 = _slicedToArray(_useState15, 2),
+      memesList = _useState16[0],
+      setMemesList = _useState16[1];
 
   var _useAuth = (0,_AuthContext__WEBPACK_IMPORTED_MODULE_2__.useAuth)(),
       currentUser = _useAuth.currentUser;
 
-  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-      _useState16 = _slicedToArray(_useState15, 2),
-      isMemeOwner = _useState16[0],
-      setIsMemeOwner = _useState16[1];
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState18 = _slicedToArray(_useState17, 2),
+      isMemeOwner = _useState18[0],
+      setIsMemeOwner = _useState18[1];
 
   var showPopularMemes = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(true);
 
-  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
-      _useState18 = _slicedToArray(_useState17, 2),
-      numOfPages = _useState18[0],
-      setNumOfPages = _useState18[1];
+  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
+      _useState20 = _slicedToArray(_useState19, 2),
+      numOfPages = _useState20[0],
+      setNumOfPages = _useState20[1];
 
-  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
+  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
     userId: -1,
     displayName: "",
     followers: 0,
     memes: 0
   }),
-      _useState20 = _slicedToArray(_useState19, 2),
-      userData = _useState20[0],
-      setUserData = _useState20[1];
-
-  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       _useState22 = _slicedToArray(_useState21, 2),
-      followings = _useState22[0],
-      setFollowings = _useState22[1];
+      userData = _useState22[0],
+      setUserData = _useState22[1];
+
+  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+      _useState24 = _slicedToArray(_useState23, 2),
+      followings = _useState24[0],
+      setFollowings = _useState24[1];
   /**
    * This function saving a meme edited by the user, whether it's new meme or one being updated.
    * @param memeImageUrl 
@@ -4453,7 +4458,7 @@ var WebProvider = function WebProvider(_ref) {
 
 
   var saveMeme = function saveMeme(memeImageUrl) {
-    setLoading(true);
+    setMemeLoading(true);
     var url = "/api/memes/";
     var methodType = "POST";
     var meme = {};
@@ -4524,7 +4529,7 @@ var WebProvider = function WebProvider(_ref) {
       console.log(err);
       setErrors("error saving the meme");
     })["finally"](function () {
-      setLoading(false);
+      setMemeLoading(false);
     });
   };
   /**
@@ -4542,13 +4547,13 @@ var WebProvider = function WebProvider(_ref) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              setLoading(true);
+              setListLoading(true);
               _context.next = 3;
               return axios__WEBPACK_IMPORTED_MODULE_3___default().get("api/users/search?query=" + input + "&page=" + selectedPage);
 
             case 3:
               response = _context.sent;
-              setLoading(false);
+              setListLoading(false);
               data = JSON.parse(response.data);
               users = data.data;
               setNumOfPages(data.last_page);
@@ -4613,7 +4618,7 @@ var WebProvider = function WebProvider(_ref) {
           switch (_context2.prev = _context2.next) {
             case 0:
               _context2.prev = 0;
-              setLoading(true);
+              setListLoading(true);
               url = "/api/memes/last-memes";
               options = {
                 headers: {
@@ -4644,7 +4649,7 @@ var WebProvider = function WebProvider(_ref) {
 
             case 13:
               _context2.prev = 13;
-              setLoading(false);
+              setListLoading(false);
               return _context2.finish(13);
 
             case 16:
@@ -4994,7 +4999,7 @@ var WebProvider = function WebProvider(_ref) {
 
 
   var getUserMemes = function getUserMemes(userId, selectedPage) {
-    setLoading(true);
+    setListLoading(true);
     var url = "/api/memes/get-user-memes/" + userId + "?page=" + selectedPage;
     var options = {
       headers: {
@@ -5010,7 +5015,7 @@ var WebProvider = function WebProvider(_ref) {
     })["catch"](function (err) {
       console.log(err);
     })["finally"](function () {
-      setLoading(false);
+      setListLoading(false);
     });
   };
   /**
@@ -5019,7 +5024,7 @@ var WebProvider = function WebProvider(_ref) {
 
 
   var deleteMeme = function deleteMeme() {
-    setLoading(true);
+    setMemeLoading(true);
     axios__WEBPACK_IMPORTED_MODULE_3___default()["delete"]("/api/memes/delete/" + memeData.memeId).then(function (response) {
       if (response.data == "1") {
         setMemesList(memesList.filter(function (meme) {
@@ -5030,7 +5035,7 @@ var WebProvider = function WebProvider(_ref) {
     })["catch"](function (err) {
       console.log("error: ", err);
     })["finally"](function () {
-      setLoading(false);
+      setMemeLoading(false);
     });
   };
   /**
@@ -5121,7 +5126,7 @@ var WebProvider = function WebProvider(_ref) {
 
   var getPopularMemes = function getPopularMemes(selectedPage) {
     showPopularMemes.current = false;
-    setLoading(true);
+    setListLoading(true);
     var url = "/api/memes/popular-memes/?page=" + selectedPage;
     var options = {
       headers: {
@@ -5137,7 +5142,7 @@ var WebProvider = function WebProvider(_ref) {
     })["catch"](function (err) {
       console.log("err");
     })["finally"](function () {
-      setLoading(false);
+      setListLoading(false);
     });
   };
   /**
@@ -5149,7 +5154,7 @@ var WebProvider = function WebProvider(_ref) {
 
   var searchMemes = function searchMemes(title, selectedPage) {
     if (title) {
-      setLoading(true);
+      setListLoading(true);
       showPopularMemes.current = true;
       var url = "/api/memes/search?title=" + title + "&page=" + selectedPage;
       var options = {
@@ -5166,7 +5171,7 @@ var WebProvider = function WebProvider(_ref) {
       })["catch"](function (err) {
         console.log("err");
       })["finally"](function () {
-        setLoading(false);
+        setListLoading(false);
       });
     } else if (!showPopularMemes.current) {
       getPopularMemes();
@@ -5197,7 +5202,7 @@ var WebProvider = function WebProvider(_ref) {
     getLastMemesUploads: getLastMemesUploads,
     resetMemeData: resetMemeData,
     makeMemeCopy: makeMemeCopy,
-    loading: loading,
+    memeLoading: memeLoading,
     isMemeOwner: isMemeOwner,
     setIsMemeOwner: setIsMemeOwner,
     upvoteMeme: upvoteMeme,
@@ -5215,7 +5220,8 @@ var WebProvider = function WebProvider(_ref) {
     followings: followings,
     unfollowUser: unfollowUser,
     getUserData: getUserData,
-    getUserTopMemes: getUserTopMemes
+    getUserTopMemes: getUserTopMemes,
+    listLoading: listLoading
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(WebContext.Provider, {
     value: value,
@@ -5367,36 +5373,39 @@ var ForgotPassword = function ForgotPassword() {
     }
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
-    onSubmit: handleSubmit,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-      children: "Enter your email to reset your password"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-      className: "input-field",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-        id: "email",
-        type: "email",
-        ref: emailRef,
-        required: true
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-        htmlFor: "email",
-        children: "Email"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul", {
-      className: "errors red-text",
-      children: errors && errors.split('\n').filter(function (val) {
-        return val && val.trim() !== '';
-      }).map(function (error, index) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-          children: error
-        }, index);
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-      ref: btnRef,
-      className: "btn",
-      type: "submit",
-      children: "submit"
-    }), loading && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_Loading__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    className: "container",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
+      onSubmit: handleSubmit,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+        children: "Enter your email to reset your password"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "input-field",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+          id: "email",
+          type: "email",
+          ref: emailRef,
+          required: true
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+          htmlFor: "email",
+          children: "Email"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul", {
+        className: "errors red-text",
+        children: errors && errors.split('\n').filter(function (val) {
+          return val && val.trim() !== '';
+        }).map(function (error, index) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            children: error
+          }, index);
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+        ref: btnRef,
+        className: "btn",
+        type: "submit",
+        children: "submit"
+      }), loading && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_Loading__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
+    })
   });
 };
 
@@ -5418,13 +5427,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _components_auth_GoogleLogin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/auth/GoogleLogin */ "./resources/js/components/auth/GoogleLogin.jsx");
 /* harmony import */ var _contexts_AuthContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../contexts/AuthContext */ "./resources/js/contexts/AuthContext.js");
-/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _css_auth_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../css/auth.css */ "./resources/css/auth.css");
 /* harmony import */ var _components_Loading__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Loading */ "./resources/js/components/Loading.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var jwt_decode__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! jwt-decode */ "./node_modules/jwt-decode/build/esm/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -5485,54 +5492,54 @@ var Login = function Login() {
       }
     }
   }, [errors]);
-  return currentUser && Object.keys(currentUser).length > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router__WEBPACK_IMPORTED_MODULE_7__.Redirect, {
+  return currentUser && Object.keys(currentUser).length > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router__WEBPACK_IMPORTED_MODULE_6__.Redirect, {
     to: "/"
-  }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+  }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: "container",
-    children: [loading && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Loading__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
+    children: [loading && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Loading__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
       onSubmit: handleSubmit,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "input-field",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
           id: "email",
           type: "email",
           ref: emailRef,
           required: true
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
           htmlFor: "email",
           children: "Email"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "input-field",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
           id: "password",
           type: "password",
           ref: passwordRef,
           required: true
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
           htmlFor: "password",
           children: "Password"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "left-align",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
           ref: loginBtnRef,
           type: "submit",
           className: "btn",
           children: "Login"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
           children: "OR"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_auth_GoogleLogin__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_auth_GoogleLogin__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
         to: "forgot-password",
         children: "Forgot Password"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("ul", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
       className: "errors red-text",
       children: errors && errors.split('\n').filter(function (val) {
         return val && val.trim() !== '';
       }).map(function (error, index) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
           children: error
         }, index);
       })
@@ -6675,10 +6682,9 @@ var MemePage = function MemePage() {
       deleteMeme = _useWebContext.deleteMeme,
       memesList = _useWebContext.memesList,
       getMeme = _useWebContext.getMeme,
-      loading = _useWebContext.loading,
+      memeLoading = _useWebContext.memeLoading,
       makeMemeCopy = _useWebContext.makeMemeCopy,
       isMemeOwner = _useWebContext.isMemeOwner,
-      setIsMemeOwner = _useWebContext.setIsMemeOwner,
       upvoteMeme = _useWebContext.upvoteMeme,
       upvotesList = _useWebContext.upvotesList,
       deleteUpvote = _useWebContext.deleteUpvote,
@@ -6978,7 +6984,7 @@ var MemePage = function MemePage() {
         message: function message(location) {
           return !location.pathname.includes("/meme/") && "Are you sure you want to go to ".concat(location.pathname, "? Your data on this page won't be saved");
         }
-      }), loading && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Loading__WEBPACK_IMPORTED_MODULE_7__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+      }), memeLoading && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Loading__WEBPACK_IMPORTED_MODULE_7__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
         className: "row",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
           className: "col m12 l8",
@@ -44950,79 +44956,6 @@ function _setPrototypeOf(o, p) {
 
   return _setPrototypeOf(o, p);
 }
-
-/***/ }),
-
-/***/ "./node_modules/jwt-decode/build/esm/index.js":
-/*!****************************************************!*\
-  !*** ./node_modules/jwt-decode/build/esm/index.js ***!
-  \****************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "InvalidTokenError": () => (/* binding */ InvalidTokenError),
-/* harmony export */   "jwtDecode": () => (/* binding */ jwtDecode)
-/* harmony export */ });
-class InvalidTokenError extends Error {
-}
-InvalidTokenError.prototype.name = "InvalidTokenError";
-function b64DecodeUnicode(str) {
-    return decodeURIComponent(atob(str).replace(/(.)/g, (m, p) => {
-        let code = p.charCodeAt(0).toString(16).toUpperCase();
-        if (code.length < 2) {
-            code = "0" + code;
-        }
-        return "%" + code;
-    }));
-}
-function base64UrlDecode(str) {
-    let output = str.replace(/-/g, "+").replace(/_/g, "/");
-    switch (output.length % 4) {
-        case 0:
-            break;
-        case 2:
-            output += "==";
-            break;
-        case 3:
-            output += "=";
-            break;
-        default:
-            throw new Error("base64 string is not of the correct length");
-    }
-    try {
-        return b64DecodeUnicode(output);
-    }
-    catch (err) {
-        return atob(output);
-    }
-}
-function jwtDecode(token, options) {
-    if (typeof token !== "string") {
-        throw new InvalidTokenError("Invalid token specified: must be a string");
-    }
-    options || (options = {});
-    const pos = options.header === true ? 0 : 1;
-    const part = token.split(".")[pos];
-    if (typeof part !== "string") {
-        throw new InvalidTokenError(`Invalid token specified: missing part #${pos + 1}`);
-    }
-    let decoded;
-    try {
-        decoded = base64UrlDecode(part);
-    }
-    catch (e) {
-        throw new InvalidTokenError(`Invalid token specified: invalid base64 for part #${pos + 1} (${e.message})`);
-    }
-    try {
-        return JSON.parse(decoded);
-    }
-    catch (e) {
-        throw new InvalidTokenError(`Invalid token specified: invalid json for part #${pos + 1} (${e.message})`);
-    }
-}
-
 
 /***/ })
 

@@ -40,7 +40,8 @@ export const useWebContext = () => {
 
 export const WebProvider = ({ children }) => {
 
-  const [loading, setLoading] = useState(false);
+  const [memeLoading, setMemeLoading] = useState(false);
+  const [listLoading, setListLoading] = useState(false);
   const [upvotesList, setUpvotesList] = useState(null);
   const [apiImages, setApiImages] = useState(null)
   const [errors, setErrors] = useState('');
@@ -58,7 +59,7 @@ export const WebProvider = ({ children }) => {
    * @param memeImageUrl 
    */
   const saveMeme = (memeImageUrl) => {
-    setLoading(true);
+    setMemeLoading(true);
     let url = "/api/memes/"
     let methodType = "POST";
     const meme = {};
@@ -111,7 +112,7 @@ export const WebProvider = ({ children }) => {
       setErrors("error saving the meme")
     })
       .finally(() => {
-        setLoading(false);
+        setMemeLoading(false);
       });
   };
 
@@ -122,9 +123,9 @@ export const WebProvider = ({ children }) => {
    * @returns  an array of the matched user, limited to items per page set in the backend
    */
   const searchUsers = async (input, selectedPage) => {
-    setLoading(true);
+    setListLoading(true);
     const response = await axios.get("api/users/search?query=" + input + "&page=" + selectedPage);
-    setLoading(false);
+    setListLoading(false);
     const data = JSON.parse(response.data);
     const users = data.data;
     setNumOfPages(data.last_page);
@@ -164,7 +165,7 @@ export const WebProvider = ({ children }) => {
    */
   const getLastMemesUploads = async () => {
     try {
-      setLoading(true);
+      setListLoading(true);
       const url = "/api/memes/last-memes";
       const options = {
         headers: { 'Content-type': 'application/json' }
@@ -183,7 +184,7 @@ export const WebProvider = ({ children }) => {
       console.log(err);
     }
     finally {
-      setLoading(false);
+      setListLoading(false);
     };
   }
 
@@ -381,7 +382,7 @@ export const WebProvider = ({ children }) => {
    * @param selectedPage - the selected page to go on the memes list
    */
   const getUserMemes = (userId, selectedPage) => {
-    setLoading(true);
+    setListLoading(true);
     const url = "/api/memes/get-user-memes/" + userId + "?page=" + selectedPage;
     const options = {
       headers: { 'Content-type': 'application/json' }
@@ -396,7 +397,7 @@ export const WebProvider = ({ children }) => {
       console.log(err);
     })
       .finally(() => {
-        setLoading(false);
+        setListLoading(false);
       });
   }
 
@@ -404,7 +405,7 @@ export const WebProvider = ({ children }) => {
    * Deleting a selected meme created by the user from the website.
    */
   const deleteMeme = () => {
-    setLoading(true);
+    setMemeLoading(true);
     axios.delete("/api/memes/delete/" + memeData.memeId).then((response) => {
       if (response.data == "1") {
         setMemesList(memesList.filter((meme) =>
@@ -415,7 +416,7 @@ export const WebProvider = ({ children }) => {
     }).catch((err) => {
       console.log("error: ", err);
     }).finally(() => {
-      setLoading(false);
+      setMemeLoading(false);
     });
   }
 
@@ -473,7 +474,7 @@ export const WebProvider = ({ children }) => {
    */
   const getPopularMemes = (selectedPage) => {
     showPopularMemes.current = false;
-    setLoading(true);
+    setListLoading(true);
     const url = "/api/memes/popular-memes/?page=" + selectedPage;
     const options = {
       headers: { 'Content-type': 'application/json' }
@@ -487,7 +488,7 @@ export const WebProvider = ({ children }) => {
     }).catch((err) => {
       console.log("err");
     }).finally(() => {
-      setLoading(false);
+      setListLoading(false);
     });
   }
 
@@ -498,7 +499,7 @@ export const WebProvider = ({ children }) => {
    */
   const searchMemes = (title, selectedPage) => {
     if (title) {
-      setLoading(true);
+      setListLoading(true);
       showPopularMemes.current = true;
       const url = "/api/memes/search?title=" + title + "&page=" + selectedPage;
       const options = {
@@ -513,7 +514,7 @@ export const WebProvider = ({ children }) => {
       }).catch((err) => {
         console.log("err");
       }).finally(() => {
-        setLoading(false);
+        setListLoading(false);
       });
     }
     else if (!showPopularMemes.current) {
@@ -547,7 +548,7 @@ export const WebProvider = ({ children }) => {
     getLastMemesUploads,
     resetMemeData,
     makeMemeCopy,
-    loading,
+    memeLoading,
     isMemeOwner,
     setIsMemeOwner,
     upvoteMeme,
@@ -565,7 +566,8 @@ export const WebProvider = ({ children }) => {
     followings,
     unfollowUser,
     getUserData,
-    getUserTopMemes
+    getUserTopMemes,
+    listLoading
   };
 
   return (

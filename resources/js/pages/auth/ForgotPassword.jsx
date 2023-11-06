@@ -26,20 +26,22 @@ const ForgotPassword = () => {
 
     ;
   return (
-    <form onSubmit={handleSubmit}>
-      <p>Enter your email to reset your password</p>
-      <div className="input-field">
-        <input id="email" type="email" ref={emailRef} required />
-        <label htmlFor="email">Email</label>
-      </div>
-      <ul className='errors red-text'>
-        {errors && errors.split('\n').filter(val => val && val.trim() !== '').map((error, index) =>
-          <li key={index}>{error}</li>
-        )}
-      </ul>
-      <button ref={btnRef} className="btn" type="submit">submit</button>
-      {loading && <Loading />}
-    </form>
+    <div className='container'>
+      <form onSubmit={handleSubmit}>
+        <p>Enter your email to reset your password</p>
+        <div className="input-field">
+          <input id="email" type="email" ref={emailRef} required />
+          <label htmlFor="email">Email</label>
+        </div>
+        <ul className='errors red-text'>
+          {errors && errors.split('\n').filter(val => val && val.trim() !== '').map((error, index) =>
+            <li key={index}>{error}</li>
+          )}
+        </ul>
+        <button ref={btnRef} className="btn" type="submit">submit</button>
+        {loading && <Loading />}
+      </form>
+    </div>
 
   )
 }
