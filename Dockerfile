@@ -1,25 +1,45 @@
-FROM php:8.1 as php
+FROM richarvey/nginx-php-fpm:1.9.1
 
-RUN apt-get update -y
-RUN apt-get install -y unzip libpq-dev libcurl4-gnutls-dev
-RUN docker-php-ext-install pdo pdo_mysql bcmath
-
-WORKDIR /var/www
 COPY . .
 
-COPY --from=composer:2.1.3 /usr/bin/composer /usr/bin/composer
+# Image config
+ENV SKIP_COMPOSER 1
+ENV WEBROOT /var/www/html/public
+ENV PHP_ERRORS_STDERR 1
+ENV RUN_SCRIPTS 1
+ENV REAL_IP_HEADER 1
 
-ENV PORT=8000
-ENTRYPOINT [ "docker/entrypoint.sh" ]
+# Laravel config
+ENV APP_ENV production
+ENV APP_DEBUG false
+ENV LOG_CHANNEL stderr
 
-# ==============================================================================
-#  node
-FROM node:14-alpine as node
+# Allow composer to run as root
+ENV COMPOSER_ALLOW_SUPERUSER 1
 
-WORKDIR /var/www
-COPY . .
+CMD ["docker/entrypoint.sh"]
+# FROM php:8.1 as php
 
-RUN npm install --global cross-env
-RUN npm install
+# RUN apt-get update -y
+# RUN apt-get install -y unzip libpq-dev libcurl4-gnutls-dev
+# RUN docker-php-ext-install pdo pdo_mysql bcmath
 
-VOLUME /var/www/node_modules
+# WORKDIR /var/www
+# COPY . .
+
+# COPY --from=composer:2.1.3 /usr/bin/composer /usr/bin/composer
+
+# ENV PORT=8000
+# ENTRYPOINT [ "docker/entrypoint.sh" ]
+
+# # ==============================================================================
+# #  node
+# FROM node:14-alpine as node
+
+# WORKDIR /var/www
+# COPY . .
+
+# RUN npm install --global cross-env
+# RUN npm install
+
+# VOLUME /var/www/node_modules
