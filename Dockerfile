@@ -1,4 +1,4 @@
-FROM richarvey/nginx-php-fpm:1.9.1
+FROM richarvey/nginx-php-fpm:3.1.6
 
 COPY . .
 
@@ -17,7 +17,8 @@ ENV LOG_CHANNEL stderr
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
-CMD ["docker/entrypoint.sh"]
+CMD ["/start.sh"]
+
 # FROM php:8.1 as php
 
 # RUN apt-get update -y
