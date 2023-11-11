@@ -35,12 +35,12 @@ CMD ["/start.sh"]
 
 # # ==============================================================================
 # #  node
-FROM node:14-alpine as node
+# FROM node:21-alpine as node
 
-WORKDIR /var/www
-COPY . .
+# WORKDIR /var/www
+# COPY . .
 
-RUN npm install --global cross-env
-RUN npm install
+# RUN npm install --global cross-env
+# RUN npm install
 
-VOLUME /var/www/node_modules
+# VOLUME /var/www/node_modules
