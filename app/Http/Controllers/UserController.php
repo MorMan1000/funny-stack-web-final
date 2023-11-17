@@ -40,7 +40,7 @@ class UserController extends Controller
                     $verificationHash = hash('sha256', rand(1, 100000));
                     $userRecord = User::create(['userEmail' => $user["userEmail"], 'displayName' => $user["displayName"], 'userPassword' => $password["userPassword"], 'passwordSalt' =>  $password["passwordSalt"], 'verificationHash' => $verificationHash]);
                     if ($userRecord) {
-                        SignUp::sendMail($userRecord, "http://localhost:8000/api/auth/verify-account/", $verificationHash);
+                        SignUp::sendMail($userRecord, env("APP_URL") . "api/auth/verify-account/", $verificationHash);
                         return response()->json($userRecord->id, 200, ["Content-type" => "application/json"]);
                     }
                 }
@@ -404,7 +404,7 @@ class UserController extends Controller
             if (isset($user) && $user->update(["verificationHash" => $verificationHash]))
                 $user = $user->first();
             if ($user) {
-                $resetLink = "http://localhost:8000/reset-password?userId=" . $user->userId . '&hash=' . $verificationHash;
+                $resetLink = env("APP_URL") . "/reset-password?userId=" . $user->userId . '&hash=' . $verificationHash;
                 $details = [
                     'resetLink' => $resetLink,
                     'subject' => "Funny Stack Password Reset"
